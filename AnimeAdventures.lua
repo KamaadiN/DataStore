@@ -19,7 +19,7 @@ function DS.GetAllMaps()
 end
 function DS.GetRaids()
     return {
-        {west_city = "West City"},
+        {west_city_raid = "West City"},
         {demonslayer_raid = "Infinity Train"},
         {naruto_raid = "Hidden Sand Village"},
         {aot_raid = "Shiganshinu District"}
