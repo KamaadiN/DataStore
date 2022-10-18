@@ -17,6 +17,14 @@ function DS.GetAllMaps()
         {namek = "Dragon Ball Z"}
     }   
 end
+function DS.GetRaids()
+    return {
+        {west_city = "West City"},
+        {demonslayer_raid = "Infinity Train"},
+        {naruto_raid = "Hidden Sand Village"},
+        {aot_raid = "Shiganshinu District"}
+    }
+end
 function DS.GetTeleports()
     return {
         {["Play"] = game:GetService("Workspace")["_teleports"].play.CFrame},
@@ -416,6 +424,41 @@ function UnitPos(map, unit, pos)
                 CFrame.new(-2941, 92, -707),
                 CFrame.new(-2942, 92, -707),
                 CFrame.new(-2943, 92, -707)
+            }
+        },
+        ["westy_city"] = {
+            u1 = {
+                CFrame.new(-2359, 40, -85)
+            },
+            u2 = {
+                CFrame.new(-2359, 19.75, -85.8),
+                CFrame.new(-2359, 19.75, -86.6),
+                CFrame.new(-2359, 19.75, -87.4),
+                CFrame.new(-2359, 19.75, -88.2)
+            },
+            u3 = {
+                CFrame.new(-2359.8, 19.75, -85.8),
+                CFrame.new(-2359.8, 19.75, -86.6),
+                CFrame.new(-2359.8, 19.75, -87.4),
+                CFrame.new(-2359.8, 19.75, -88.2)
+            },
+            u4 = {
+                CFrame.new(-2358.2, 19.75, -85.8),
+                CFrame.new(-2358.2, 19.75, -86.6),
+                CFrame.new(-2358.2, 19.75, -87.4),
+                CFrame.new(-2358.2, 19.75, -88.2)
+            },
+            u5 = {
+                CFrame.new(-2360.6, 19.75, -85.8),
+                CFrame.new(-2360.6, 19.75, -86.6),
+                CFrame.new(-2360.6, 19.75, -87.4),
+                CFrame.new(-2360.6, 19.75, -88.2)
+            },
+            u6 = {
+                CFrame.new(-2357.4, 19.75, -85.8),
+                CFrame.new(-2357.4, 19.75, -86.6),
+                CFrame.new(-2357.4, 19.75, -87.4),
+                CFrame.new(-2357.4, 19.75, -88.2)
             }
         }
     }
