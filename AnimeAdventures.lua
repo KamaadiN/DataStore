@@ -438,7 +438,7 @@ function UnitPos(map, unit, pos)
                 CFrame.new(-2943, 92, -707)
             }
         },
-        ["westy_city"] = {
+        ["westy_city_raid"] = {
             u1 = {
                 CFrame.new(-2359, 40, -85)
             },
