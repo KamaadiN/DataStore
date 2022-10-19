@@ -5,22 +5,22 @@ function DS.GetVersion()
 end
 function DS.GetAllMaps()
     return {
-        {jjk = "Jujutsu Kaisen"},
-        {magnolia = "Fairy Tail"},
-        {hxhant = "Hunter x Hunter"},
-        {hueco = "Bleach"},
-        {tokyoghoul = "Tokyo Ghoul"},
-        {marineford = "One Piece"},
-        {naruto = "Naruto"},
-        {demonslayer = "Kimetsu no Yaiba"},
-        {aot = "Attack On Titan"},
-        {namek = "Dragon Ball Z"}
+        {jjk = "Cursed Academy"},
+        {magnolia = "Magic Town"},
+        {hxhant = "Ant Kingdom"},
+        {hueco = "Hollow World"},
+        {tokyoghoul = "Ghoul City"},
+        {marineford = "Marine's Ford"},
+        {naruto = "Hidden Sand Village"},
+        {demonslayer = "Snowy Town"},
+        {aot = "Shiganshinu District"},
+        {namek = "Planet Namak"}
     }   
 end
 function DS.GetRaids()
     return {
         {west_city_raid = "West City"},
-        {demonslayer_raid = "Infinity Train"},
+        --{demonslayer_raid = "Infinity Train"},
         {naruto_raid = "Hidden Sand Village"},
         {aot_raid = "Shiganshinu District"}
     }
@@ -162,42 +162,46 @@ function UnitPos(map, unit, pos)
     local UnitPos = {   
         ["jjk"] = {
             u1 = {
-                CFrame.new(378.5, 146, -78.5)
+                CFrame.new(378.5, 146, -78.5),
+                CFrame.new(378.5, 149, -78.5),
+                CFrame.new(378.5, 152, -78.5)
             },
             u2 = {
-                CFrame.new(406, 122, -60),
-                CFrame.new(406.8, 122, -60),
-                CFrame.new(407.6, 122, -60),
-                CFrame.new(408.4, 122, -60)
+                CFrame.new(364, 122, -87),
+                CFrame.new(364, 122, -86.2),
+                CFrame.new(364, 122, -85.4),
+                CFrame.new(364, 122, -84.6)
             },
             u3 = {
-                CFrame.new(406, 122, -61),
-                CFrame.new(406.8, 122, -61),
-                CFrame.new(407.6, 122, -61),
-                CFrame.new(408.4, 122, -61)
+                CFrame.new(364.8, 122, -87),
+                CFrame.new(364.8, 122, -86.2),
+                CFrame.new(364.8, 122, -85.4),
+                CFrame.new(364.8, 122, -84.6)
             },
             u4 = {
-                CFrame.new(406, 122, -59),
-                CFrame.new(406.8, 122, -59),
-                CFrame.new(407.6, 122, -59),
-                CFrame.new(408.4, 122, -59)
+                CFrame.new(363.2, 122, -87),
+                CFrame.new(363.2, 122, -86.2),
+                CFrame.new(363.2, 122, -85.4),
+                CFrame.new(363.2, 122, -84.6)
             },
             u5 = {
-                CFrame.new(406, 122, -62),
-                CFrame.new(406.8, 122, -62),
-                CFrame.new(407.6, 122, -62),
-                CFrame.new(408.4, 122, -62)
+                CFrame.new(365.6, 122, -87),
+                CFrame.new(365.6, 122, -86.2),
+                CFrame.new(365.6, 122, -85.4),
+                CFrame.new(365.6, 122, -84.6)
             },
             u6 = {
-                CFrame.new(406, 122, -58),
-                CFrame.new(406.8, 122, -58),
-                CFrame.new(407.6, 122, -58),
-                CFrame.new(408.4, 122, -58)
+                CFrame.new(362.4, 122, -87),
+                CFrame.new(362.4, 122, -86.2),
+                CFrame.new(362.4, 122, -85.4),
+                CFrame.new(362.4, 122, -84.6)
             }
         },
         ["magnolia"] = {
             u1 = {
-                CFrame.new(-598.0305786132812, 22.5, -830.3179321289062)
+                CFrame.new(-598.0305786132812, 22.5, -830.3179321289062),
+                CFrame.new(-598.0305786132812, 23.5, -830.3179321289062),
+                CFrame.new(-598.0305786132812, 24.5, -830.3179321289062)
             },
             u2 = {
                 CFrame.new(-586.0616455078125, 6.7, -812.8890991210938),
@@ -232,7 +236,9 @@ function UnitPos(map, unit, pos)
         },
         ["hxhant"] = {
             u1 = {
-                CFrame.new(-166, 23, 2939)
+                CFrame.new(-166, 23, 2939),
+                CFrame.new(-166, 24, 2939),
+                CFrame.new(-166, 25, 2939)
             },
             u2 = {
                 CFrame.new(-190, 23, 2962),
@@ -267,7 +273,9 @@ function UnitPos(map, unit, pos)
         },
         ["hueco"] = {
             u1 = {
-                CFrame.new(-154, 132.6, -725.65)
+                CFrame.new(-154, 132.6, -725.65),
+                CFrame.new(-154, 133.6, -725.65),
+                CFrame.new(-154, 134.6, -725.65)
             },
             u2 = {
                 CFrame.new(-188, 132.6639862060547, -761),
@@ -302,7 +310,9 @@ function UnitPos(map, unit, pos)
         },
         ["tokyoghoul"] = {
             u1 = {
-                CFrame.new(-3016, 58.58, -40)
+                CFrame.new(-3016, 58.58, -40),
+                CFrame.new(-3016, 59.58, -40),
+                CFrame.new(-3016, 60.58, -40)
             },
             u2 = {
                 CFrame.new(-3000, 58.58, -64),
