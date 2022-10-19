@@ -159,7 +159,7 @@ function DS.PlaceUnits(option, option2)
     end)
 end
 function UnitPos(map, unit, pos)
-    local UnitPos = {
+    local UnitPos = {   
         ["jjk"] = {
             u1 = {
                 CFrame.new(378.5, 146, -78.5)
@@ -438,7 +438,7 @@ function UnitPos(map, unit, pos)
                 CFrame.new(-2943, 92, -707)
             }
         },
-        ["westy_city_raid"] = {
+        ["west_city_raid"] = {
             u1 = {
                 CFrame.new(-2359, 40, -85)
             },
