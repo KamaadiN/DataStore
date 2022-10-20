@@ -315,7 +315,8 @@
             2771766988, -- Slow
             2504255348, -- DouglasNFT
             3332872267, -- Lirous
-            3067509017 -- WesleyPC
+            3067509017, -- WesleyPC
+            2038778847 -- Escuridão
         }
     end
     function DS.Codes()
