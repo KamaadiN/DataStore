@@ -1,80 +1,79 @@
-local DS = {}
+    local DS = {}
 
-function DS.GetVersion()
-    return "6.6.0"
-end
-function DS.GetAllMaps()
-    return {
-        {jjk = "Cursed Academy"},
-        {magnolia = "Magic Town"},
-        {hxhant = "Ant Kingdom"},
-        {hueco = "Hollow World"},
-        {tokyoghoul = "Ghoul City"},
-        {marineford = "Marine's Ford"},
-        {naruto = "Hidden Sand Village"},
-        {demonslayer = "Snowy Town"},
-        {aot = "Shiganshinu District"},
-        {namek = "Planet Namak"}
-    }   
-end
-function DS.GetRaids()
-    return {
-        {west_city_raid = "West City"},
-        --{demonslayer_raid = "Infinity Train"},
-        {naruto_raid = "Hidden Sand Village"},
-        {aot_raid = "Shiganshinu District"}
-    }
-end
-function DS.GetTeleports()
-    return {
-        {["Play"] = game:GetService("Workspace")["_teleports"].play.CFrame},
-        {["Summon"] = game:GetService("Workspace")["_teleports"].summon.CFrame},
-        {["Challenge"] = game:GetService("Workspace")["_CHALLENGES"].shell.floor.CFrame},
-        {["Raid"] = game:GetService("Workspace")["_RAID"].shell.floor.CFrame},
-        {["Leaderboards"] = game:GetService("Workspace")["_LEADERBOARDS_"].shell.floor.CFrame},
-        {["Gojo Domain"] = game:GetService("Workspace")["_gojodomain"].entrance.CFrame},
-        {["Infinity Castle"] = game:GetService("Workspace")["_infinity_castle"].entrance.CFrame},
-        {["Sukuna Domain"] = game:GetService("Workspace")["_sukunadomain"].entrance.CFrame}
-    }
-end
+    function DS.GetVersion()
+        return "6.6.0"
+    end
+    function DS.GetAllMaps()
+        return {
+            {jjk = "Cursed Academy"},
+            {magnolia = "Magic Town"},
+            {hxhant = "Ant Kingdom"},
+            {hueco = "Hollow World"},
+            {tokyoghoul = "Ghoul City"},
+            {marineford = "Marine's Ford"},
+            {naruto = "Hidden Sand Village"},
+            {demonslayer = "Snowy Town"},
+            {aot = "Shiganshinu District"},
+            {namek = "Planet Namak"}
+        }   
+    end
+    function DS.GetRaids()
+        return {
+            {west_city_raid = "West City"},
+            {demonslayer_raid = "Infinity Train"},
+            {naruto_raid = "Hidden Sand Village"},
+            {aot_raid = "Shiganshinu District"}
+        }
+    end
+    function DS.GetTeleports()
+        return {
+            {["Play"] = game:GetService("Workspace")["_teleports"].play.CFrame},
+            {["Summon"] = game:GetService("Workspace")["_teleports"].summon.CFrame},
+            {["Challenge"] = game:GetService("Workspace")["_CHALLENGES"].shell.floor.CFrame},
+            {["Raid"] = game:GetService("Workspace")["_RAID"].shell.floor.CFrame},
+            {["Leaderboards"] = game:GetService("Workspace")["_LEADERBOARDS_"].shell.floor.CFrame},
+            {["Gojo Domain"] = game:GetService("Workspace")["_gojodomain"].entrance.CFrame},
+            {["Infinity Castle"] = game:GetService("Workspace")["_infinity_castle"].entrance.CFrame},
+            {["Sukuna Domain"] = game:GetService("Workspace")["_sukunadomain"].entrance.CFrame}
+        }
+    end
 
-function DS.PlaceUnits(option, option2)
-    local wave = game:GetService("Workspace")["_wave_num"].Value
-    pcall(function()
+    function DS.PlaceUnits(option, option2)
+        local wave = game:GetService("Workspace"):WaitForChild("_wave_num").Value
         if option == "story" then
-            if wave < 4 then
-                local uID =  string.split(_G.Config.Story.Units["u1"], " ")
-                for i = 1, 1 do
+            if wave < 5 and _G.Config.Story.Units["u1"] ~= "" then
+                local uID = string.split(_G.Config.Story.Units["u1"], " ")
+                for i = 1, _G.Config.Story.SpawnCap["u1"] do
                     PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u1", i))
                 end
             end
-            if wave < 15 then
-                local uID =  string.split(_G.Config.Story.Units["u2"], " ")
-                for i = 1, 4 do
+            if wave < 15 then    
+                local uID = string.split(_G.Config.Story.Units["u2"], " ")
+                for i = 1, _G.Config.Story.SpawnCap["u2"] do
                     PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u2", i))
                 end
             end
             if wave < 15 then
-                local uID =  string.split(_G.Config.Story.Units["u3"], " ")
-                for i = 1, 4 do
+                local uID = string.split(_G.Config.Story.Units["u3"], " ")
+                for i = 1, _G.Config.Story.SpawnCap["u3"] do
                     PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u3", i))
                 end
             end
-            if wave > 5 and wave < 15 then
-                local uID =  string.split(_G.Config.Story.Units["u4"], " ")
-                for i = 1, 4 do
+            if wave > 6 then
+                local uID = string.split(_G.Config.Story.Units["u4"], " ")
+                for i = 1, _G.Config.Story.SpawnCap["u4"] do
                     PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u4", i))
                 end
             end
-            if wave > 5 and wave < 15 then
-                local uID =  string.split(_G.Config.Story.Units["u5"], " ")
-                for i = 1, 4 do
+            if wave > 6 then
+                local uID = string.split(_G.Config.Story.Units["u5"], " ")
+                for i = 1, _G.Config.Story.SpawnCap["u5"] do
                     PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u5", i))
                 end
             end
-            if wave > 5 and wave < 15 then
-                local uID =  string.split(_G.Config.Story.Units["u6"], " ")
-                for i = 1, 4 do
+            if wave > 6 then
+                local uID = string.split(_G.Config.Story.Units["u6"], " ")
+                for i = 1, _G.Config.Story.SpawnCap["u6"] do
                     PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u6", i))
                 end
             end
@@ -82,13 +81,13 @@ function DS.PlaceUnits(option, option2)
             if _G.Config.Inf.Map == "jjk" or _G.Config.Inf.Map == "magnolia" or _G.Config.Inf.Map == "hxhant" or _G.Config.Inf.Map == "hueco" then
                 if wave < 3 then
                     local uID =  string.split(_G.Config.Inf.Units["u1"], " ")
-                    for i = 1, 1 do
+                    for i = 1, 3 do
                         PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u1", i))
                     end
                 end
                 if wave < 3 then
                     local uID =  string.split(_G.Config.Inf.Units["u2"], " ")
-                    for i = 1, 3 do
+                    for i = 1, 4 do
                         PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u2", i))
                     end
                 end
@@ -104,13 +103,13 @@ function DS.PlaceUnits(option, option2)
                         PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u4", i))
                     end
                 end
-                if wave > 10 and wave < _G.Config.Inf.WaveToLose then
+                if wave > 10 then
                     local uID =  string.split(_G.Config.Inf.Units["u5"], " ")
                     for i = 1, 4 do
                         PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u5", i))
                     end
                 end
-                if wave > 10 and wave < _G.Config.Inf.WaveToLose then
+                if wave > 10 then
                     local uID =  string.split(_G.Config.Inf.Units["u6"], " ")  
                     for i = 1, 5 do
                         PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u6", i))
@@ -120,13 +119,13 @@ function DS.PlaceUnits(option, option2)
             _G.Config.Inf.Map == "demonslayer" or _G.Config.Inf.Map == "aot" or _G.Config.Inf.Map == "namek" then
                 if wave < 4 then
                     local uID =  string.split(_G.Config.Inf.Units["u1"], " ")
-                    for i = 1, 1 do
+                    for i = 1, 3 do
                         PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u1", i))
                     end
                 end
                 if wave < 4 then
                     local uID =  string.split(_G.Config.Inf.Units["u2"], " ")
-                    for i = 1, 3 do
+                    for i = 1, 4 do
                         PlaceToLoc(uID[3], UnitPos(_G.Config[option2].Map, "u2", i))
                     end
                 end
@@ -156,371 +155,181 @@ function DS.PlaceUnits(option, option2)
                 end
             end
         end
-    end)
-end
-function UnitPos(map, unit, pos)
-    local UnitPos = {   
-        ["jjk"] = {
-            u1 = {
-                CFrame.new(378.5, 146, -78.5),
-                CFrame.new(378.5, 149, -78.5),
-                CFrame.new(378.5, 152, -78.5)
+    end
+    
+    function UnitCFrames(CFrame, UnitAmount, Queue, OtherMultiplier)
+        local table = {}
+        local multiplier = 0
+        if Queue == "x" then
+            for i = 1, UnitAmount do
+                table[i] = CFrame + Vector3.new((0.85 * multiplier), 0, (0.85 * OtherMultiplier))
+                multiplier = multiplier + 1
+            end
+        elseif Queue == "z" then
+            for i = 1, UnitAmount do
+                table[i] = CFrame + Vector3.new((0.85 * OtherMultiplier), 0, (0.85 * multiplier))
+                multiplier = multiplier + 1
+            end
+        elseif Queue == "money" then
+            for i = 1, UnitAmount do
+                table[i] = CFrame + Vector3.new(0, (5 * multiplier), 0)
+                multiplier = multiplier + 1
+            end
+        end
+        return table
+    end
+    function UnitPos(map, unit, pos)
+        local UnitPos = {   
+            ["jjk"] = {
+                u1 = UnitCFrames(CFrame.new(378.5, 146, -78.5), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(364, 122, -87), 4, "z", 0),
+                u3 = UnitCFrames(CFrame.new(364, 122, -87), 4, "z", 1),
+                u4 = UnitCFrames(CFrame.new(364, 122, -87), 4, "z", 2),
+                u5 = UnitCFrames(CFrame.new(364, 122, -87), 4, "z", 3),
+                u6 = UnitCFrames(CFrame.new(364, 122, -87), 4, "z", 4)
             },
-            u2 = {
-                CFrame.new(364, 122, -87),
-                CFrame.new(364, 122, -86.2),
-                CFrame.new(364, 122, -85.4),
-                CFrame.new(364, 122, -84.6)
+            ["magnolia"] = {
+                u1 = UnitCFrames(CFrame.new(-598, 22.5, -830.3), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-604, 7, -830), 4, "z", 0),
+                u3 = UnitCFrames(CFrame.new(-604, 7, -830), 4, "z", 1),
+                u4 = UnitCFrames(CFrame.new(-604, 7, -830), 4, "z", 2),
+                u5 = UnitCFrames(CFrame.new(-604, 7, -830), 4, "z", 3),
+                u6 = UnitCFrames(CFrame.new(-604, 7, -830), 4, "z", 4)
             },
-            u3 = {
-                CFrame.new(364.8, 122, -87),
-                CFrame.new(364.8, 122, -86.2),
-                CFrame.new(364.8, 122, -85.4),
-                CFrame.new(364.8, 122, -84.6)
+            ["hxhant"] = {
+                u1 = UnitCFrames(CFrame.new(-166, 23, 2939), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-162, 23, 2953), 4, "x", 0),
+                u3 = UnitCFrames(CFrame.new(-162, 23, 2953), 4, "x", 1),
+                u4 = UnitCFrames(CFrame.new(-162, 23, 2953), 4, "x", 2),
+                u5 = UnitCFrames(CFrame.new(-162, 23, 2953), 4, "x", 3),
+                u6 = UnitCFrames(CFrame.new(-162, 23, 2953), 4, "x", 4)
             },
-            u4 = {
-                CFrame.new(363.2, 122, -87),
-                CFrame.new(363.2, 122, -86.2),
-                CFrame.new(363.2, 122, -85.4),
-                CFrame.new(363.2, 122, -84.6)
+            ["hueco"] = {
+                u1 = UnitCFrames(CFrame.new(-154, 133, -725.65), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-188, 133, -761), 4, "z", 0),
+                u3 = UnitCFrames(CFrame.new(-188, 133, -761), 4, "z", 1),
+                u4 = UnitCFrames(CFrame.new(-188, 133, -761), 4, "z", 2),
+                u5 = UnitCFrames(CFrame.new(-188, 133, -761), 4, "z", 3),
+                u6 = UnitCFrames(CFrame.new(-188, 133, -761), 4, "z", 4)
             },
-            u5 = {
-                CFrame.new(365.6, 122, -87),
-                CFrame.new(365.6, 122, -86.2),
-                CFrame.new(365.6, 122, -85.4),
-                CFrame.new(365.6, 122, -84.6)
+            ["tokyoghoul"] = {
+                u1 = UnitCFrames(CFrame.new(-3022.8, 58.5, -48.6), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-3000, 58.5, -48), 4, "x", 0),
+                u3 = UnitCFrames(CFrame.new(-3000, 58.5, -48), 4, "x", 1),
+                u4 = UnitCFrames(CFrame.new(-3000, 58.5, -48), 4, "x", 2),
+                u5 = UnitCFrames(CFrame.new(-3000, 58.5, -48), 4, "x", 3),
+                u6 = UnitCFrames(CFrame.new(-3000, 58.5, -48), 4, "x", 4)
             },
-            u6 = {
-                CFrame.new(362.4, 122, -87),
-                CFrame.new(362.4, 122, -86.2),
-                CFrame.new(362.4, 122, -85.4),
-                CFrame.new(362.4, 122, -84.6)
-            }
-        },
-        ["magnolia"] = {
-            u1 = {
-                CFrame.new(-598.0305786132812, 22.5, -830.3179321289062),
-                CFrame.new(-598.0305786132812, 23.5, -830.3179321289062),
-                CFrame.new(-598.0305786132812, 24.5, -830.3179321289062)
+            ["marineford"] = {
+                u1 = UnitCFrames(CFrame.new(-2590, 34.5, -37), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-2553, 25.2, -38), 4, "x", 0),
+                u3 = UnitCFrames(CFrame.new(-2553, 25.2, -38), 4, "x", 1),
+                u4 = UnitCFrames(CFrame.new(-2553, 25.2, -38), 4, "x", 2),
+                u5 = UnitCFrames(CFrame.new(-2553, 25.2, -38), 4, "x", 3),
+                u6 = UnitCFrames(CFrame.new(-2553, 25.2, -38), 4, "x", 4)
             },
-            u2 = {
-                CFrame.new(-586.0616455078125, 6.7, -812.8890991210938),
-                CFrame.new(-587.0616455078125, 6.7, -812.8890991210938),
-                CFrame.new(-588.0616455078125, 6.7, -812.8890991210938),
-                CFrame.new(-589.0616455078125, 6.7, -812.8890991210938)
+            ["naruto"] = {
+                u1 = UnitCFrames(CFrame.new(-878.5, 32, 328), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-894, 25.3, 312), 4, "x", 0),
+                u3 = UnitCFrames(CFrame.new(-894, 25.3, 312), 4, "x", 1),
+                u4 = UnitCFrames(CFrame.new(-894, 25.3, 312), 4, "x", 2),
+                u5 = UnitCFrames(CFrame.new(-894, 25.3, 312), 4, "x", 3),
+                u6 = UnitCFrames(CFrame.new(-894, 25.3, 312), 4, "x", 4)
             },
-            u3 = {
-                CFrame.new(-586.0616455078125, 6.7, -813.8890991210938),
-                CFrame.new(-587.0616455078125, 6.7, -813.8890991210938),
-                CFrame.new(-588.0616455078125, 6.7, -813.8890991210938),
-                CFrame.new(-589.0616455078125, 6.7, -813.8890991210938)
+            ["demonslayer"] = {
+                u1 = UnitCFrames(CFrame.new(-2971.5, 42.45, -170.8), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-2870, 34.3, -124), 4, "x", 0),
+                u3 = UnitCFrames(CFrame.new(-2870, 34.3, -124), 4, "x", 1),
+                u4 = UnitCFrames(CFrame.new(-2870, 34.3, -124), 4, "x", 2),
+                u5 = UnitCFrames(CFrame.new(-2870, 34.3, -124), 4, "x", 3),
+                u6 = UnitCFrames(CFrame.new(-2870, 34.3, -124), 4, "x", 4)
             },
-            u4 = {
-                CFrame.new(-586.0616455078125, 6.7, -814.8890991210938),
-                CFrame.new(-587.0616455078125, 6.7, -814.8890991210938),
-                CFrame.new(-588.0616455078125, 6.7, -814.8890991210938),
-                CFrame.new(-589.0616455078125, 6.7, -814.8890991210938)
+            ["aot"] = {
+                u1 = UnitCFrames(CFrame.new(-2981, 42, -692), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-3014, 33.75, -682), 4, "z", 0),
+                u3 = UnitCFrames(CFrame.new(-3014, 33.75, -682), 4, "z", 1),
+                u4 = UnitCFrames(CFrame.new(-3014, 33.75, -682), 4, "z", 2),
+                u5 = UnitCFrames(CFrame.new(-3014, 33.75, -682), 4, "z", 3),
+                u6 = UnitCFrames(CFrame.new(-3014, 33.75, -682), 4, "z", 4)
             },
-            u5 = {
-                CFrame.new(-586.0616455078125, 6.7, -811.8890991210938),
-                CFrame.new(-587.0616455078125, 6.7, -811.8890991210938),
-                CFrame.new(-588.0616455078125, 6.7, -811.8890991210938),
-                CFrame.new(-589.0616455078125, 6.7, -811.8890991210938)
+            ["namek"] = {
+                u1 = UnitCFrames(CFrame.new(-2926, 94.4, -750.3), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-2948.5, 91.8, -709.5), 4, "x", 0),
+                u3 = UnitCFrames(CFrame.new(-2948.5, 91.8, -709.5), 4, "x", 1),
+                u4 = UnitCFrames(CFrame.new(-2948.5, 91.8, -709.5), 4, "x", 2),
+                u5 = UnitCFrames(CFrame.new(-2948.5, 91.8, -709.5), 4, "x", 3),
+                u6 = UnitCFrames(CFrame.new(-2948.5, 91.8, -709.5), 4, "x", 4)
             },
-            u6 = {
-                CFrame.new(-586.0616455078125, 6.7, -810.8890991210938),
-                CFrame.new(-587.0616455078125, 6.7, -810.8890991210938),
-                CFrame.new(-588.0616455078125, 6.7, -810.8890991210938),
-                CFrame.new(-589.0616455078125, 6.7, -810.8890991210938)
-            }
-        },
-        ["hxhant"] = {
-            u1 = {
-                CFrame.new(-166, 23, 2939),
-                CFrame.new(-166, 24, 2939),
-                CFrame.new(-166, 25, 2939)
+            ["west_city_raid"] = {
+                u1 = UnitCFrames(CFrame.new(-2359, 40, -85), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-2359, 19.75, -85.8), 4, "z", 0),
+                u3 = UnitCFrames(CFrame.new(-2359, 19.75, -85.8), 4, "z", 1),
+                u4 = UnitCFrames(CFrame.new(-2359, 19.75, -85.8), 4, "z", 2),
+                u5 = UnitCFrames(CFrame.new(-2359, 19.75, -85.8), 4, "z", 3),
+                u6 = UnitCFrames(CFrame.new(-2359, 19.75, -85.8), 4, "z", 4)
             },
-            u2 = {
-                CFrame.new(-190, 23, 2962),
-                CFrame.new(-191, 23, 2961),
-                CFrame.new(-192, 23, 2960),
-                CFrame.new(-193, 23, 2959)
+            ["demonslayer_raid"] = {
+                u1 = UnitCFrames(CFrame.new(86, -7, 318.8), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(35, -15, 325), 4, "z", 0),
+                u3 = UnitCFrames(CFrame.new(35, -15, 325), 4, "z", 1),
+                u4 = UnitCFrames(CFrame.new(35, -15, 325), 4, "z", 2),
+                u5 = UnitCFrames(CFrame.new(35, -15, 325), 4, "z", 3),
+                u6 = UnitCFrames(CFrame.new(35, -15, 325), 4, "z", 4)
             },
-            u3 = {
-                CFrame.new(-190, 23, 2960),
-                CFrame.new(-191, 23, 2959),
-                CFrame.new(-192, 23, 2958),
-                CFrame.new(-193, 23, 2957)
+            ["naruto_raid"] = {
+                u1 = UnitCFrames(CFrame.new(-878.5, 32, 328), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-894, 25.3, 312), 4, "x", 0),
+                u3 = UnitCFrames(CFrame.new(-894, 25.3, 312), 4, "x", 1),
+                u4 = UnitCFrames(CFrame.new(-894, 25.3, 312), 4, "x", 2),
+                u5 = UnitCFrames(CFrame.new(-894, 25.3, 312), 4, "x", 3),
+                u6 = UnitCFrames(CFrame.new(-894, 25.3, 312), 4, "x", 4)
             },
-            u4 = {
-                CFrame.new(-190, 23, 2964),
-                CFrame.new(-191, 23, 2963),
-                CFrame.new(-192, 23, 2962),
-                CFrame.new(-193, 23, 2961)
-            },
-            u5 = {
-                CFrame.new(-190, 23, 2958),
-                CFrame.new(-191, 23, 2957),
-                CFrame.new(-192, 23, 2956),
-                CFrame.new(-193, 23, 2955)
-            },
-            u6 = {
-                CFrame.new(-190, 23, 2966),
-                CFrame.new(-191, 23, 2965),
-                CFrame.new(-192, 23, 2964),
-                CFrame.new(-193, 23, 2963)
-            }
-        },
-        ["hueco"] = {
-            u1 = {
-                CFrame.new(-154, 132.6, -725.65),
-                CFrame.new(-154, 133.6, -725.65),
-                CFrame.new(-154, 134.6, -725.65)
-            },
-            u2 = {
-                CFrame.new(-188, 132.6639862060547, -761),
-                CFrame.new(-188, 132.6639862060547, -760.2),
-                CFrame.new(-188, 132.6639862060547, -759.4),
-                CFrame.new(-188, 132.6639862060547, -758.6)
-            },
-            u3 = {
-                CFrame.new(-188.8, 132.6639862060547, -761),
-                CFrame.new(-188.8, 132.6639862060547, -760.2),
-                CFrame.new(-188.8, 132.6639862060547, -759.4),
-                CFrame.new(-188.8, 132.6639862060547, -758.6)
-            },
-            u4 = {
-                CFrame.new(-187.2, 132.6639862060547, -761),
-                CFrame.new(-187.2, 132.6639862060547, -760.2),
-                CFrame.new(-187.2, 132.6639862060547, -759.4),
-                CFrame.new(-187.2, 132.6639862060547, -758.6)
-            },
-            u5 = {
-                CFrame.new(-186.4, 132.6639862060547, -761),
-                CFrame.new(-186.4, 132.6639862060547, -760.2),
-                CFrame.new(-186.4, 132.6639862060547, -759.4),
-                CFrame.new(-186.4, 132.6639862060547, -758.6)
-            },
-            u6 = {
-                CFrame.new(-189.6, 132.6639862060547, -761),
-                CFrame.new(-189.6, 132.6639862060547, -760.2),
-                CFrame.new(-189.6, 132.6639862060547, -759.4),
-                CFrame.new(-189.6, 132.6639862060547, -758.6)
-            }
-        },
-        ["tokyoghoul"] = {
-            u1 = {
-                CFrame.new(-3016, 58.58, -40),
-                CFrame.new(-3016, 59.58, -40),
-                CFrame.new(-3016, 60.58, -40)
-            },
-            u2 = {
-                CFrame.new(-3000, 58.58, -64),
-                CFrame.new(-3000, 58.58, -63),
-                CFrame.new(-3000, 58.58, -62),
-                CFrame.new(-3000, 58.58, -61)
-            },
-            u3 = {
-                CFrame.new(-2999, 58.58, -64),
-                CFrame.new(-2999, 58.58, -63),
-                CFrame.new(-2999, 58.58, -62),
-                CFrame.new(-2999, 58.58, -61)
-            },
-            u4 = {
-                CFrame.new(-3001, 58.58, -64),
-                CFrame.new(-3001, 58.58, -63),
-                CFrame.new(-3001, 58.58, -62),
-                CFrame.new(-3001, 58.58, -61)
-            }
-        },
-        ["marineford"] = {
-            u1 = {
-                CFrame.new(-2590.36, 34.52, -36.98)
-            },
-            u2 = {
-                CFrame.new(-2528.2, 25.2, -35.7),
-                CFrame.new(-2529.2, 25.2, -35.7),
-                CFrame.new(-2530.2, 25.2, -35.7),
-                CFrame.new(-2531.2, 25.2, -35.7)
-            },
-            u3 = {
-                CFrame.new(-2528.2, 25.2, -36.7),
-                CFrame.new(-2529.2, 25.2, -36.7),
-                CFrame.new(-2530.2, 25.2, -36.7),
-                CFrame.new(-2531.2, 25.2, -36.7)
-            },
-            u4 = {
-                CFrame.new(-2528.2, 25.2, -34.7),
-                CFrame.new(-2529.2, 25.2, -34.7),
-                CFrame.new(-2530.2, 25.2, -34.7),
-                CFrame.new(-2531.2, 25.2, -34.7)
-            }
-        },
-        ["naruto"] = {
-            u1 = {
-                CFrame.new(-894.9, 29.5, 320.6)
-            },
-            u2 = {
-                CFrame.new(-885.36, 25.28, 336.15),
-                CFrame.new(-885.36, 25.28, 335.15),
-                CFrame.new(-885.36, 25.28, 334.15),
-                CFrame.new(-885.36, 25.28, 333.15)
-            },
-            u3 = {
-                CFrame.new(-886.36, 25.28, 336.15),
-                CFrame.new(-886.36, 25.28, 335.15),
-                CFrame.new(-886.36, 25.28, 334.15),
-                CFrame.new(-886.36, 25.28, 333.15)
-            },
-            u4 = {
-                CFrame.new(-884.36, 25.28, 336.15),
-                CFrame.new(-884.36, 25.28, 335.15),
-                CFrame.new(-884.36, 25.28, 334.15),
-                CFrame.new(-884.36, 25.28, 333.15)
-            }
-        },
-        ["demonslayer"] = {
-            u1 = {
-                CFrame.new(-2880.86, 34.34, -126.45)
-            },
-            u2 = {
-                CFrame.new(-2865.21, 34.34, -126.25),
-                CFrame.new(-2866.21, 34.34, -126.25),
-                CFrame.new(-2867.21, 34.34, -126.25),
-                CFrame.new(-2868.21, 34.34, -126.25)
-            },
-            u3 = {
-                CFrame.new(-2865.21, 34.34, -127.25),
-                CFrame.new(-2866.21, 34.34, -127.25),
-                CFrame.new(-2867.21, 34.34, -127.25),
-                CFrame.new(-2868.21, 34.34, -127.25)
-            },
-            u4 = {
-                CFrame.new(-2865.21, 34.34, -125.25),
-                CFrame.new(-2866.21, 34.34, -125.25),
-                CFrame.new(-2867.21, 34.34, -125.25),
-                CFrame.new(-2868.21, 34.34, -125.25)
-            }
-        },
-        ["aot"] = {
-            u1 = {
-                CFrame.new(-2988, 33.75, -618)
-            },
-            u2 = {
-                CFrame.new(-3024.8, 33.74, -684.15),
-                CFrame.new(-3025.8, 33.74, -684.15),
-                CFrame.new(-3026.8, 33.74, -684.15),
-                CFrame.new(-3027.8, 33.74, -684.15)
-            },
-            u3 = {
-                CFrame.new(-3024.8, 33.74, -685.15),
-                CFrame.new(-3025.8, 33.74, -685.15),
-                CFrame.new(-3026.8, 33.74, -685.15),
-                CFrame.new(-3027.8, 33.74, -685.15)
-            },
-            u4 = {
-                CFrame.new(-3024.8, 33.74, -683.15),
-                CFrame.new(-3025.8, 33.74, -683.15),
-                CFrame.new(-3026.8, 33.74, -683.15),
-                CFrame.new(-3027.8, 33.74, -683.15)
-            }
-        },
-        ["namek"] = {
-            u1 = {
-                CFrame.new(-2914, 92, -737)
-            },
-            u2 = {
-                CFrame.new(-2940, 92, -706),
-                CFrame.new(-2941, 92, -706),
-                CFrame.new(-2942, 92, -706),
-                CFrame.new(-2943, 92, -706)
-            },
-            u3 = {
-                CFrame.new(-2940, 92, -705),
-                CFrame.new(-2941, 92, -705),
-                CFrame.new(-2942, 92, -705),
-                CFrame.new(-2943, 92, -705)
-            },
-            u4 = {
-                CFrame.new(-2940, 92, -707),
-                CFrame.new(-2941, 92, -707),
-                CFrame.new(-2942, 92, -707),
-                CFrame.new(-2943, 92, -707)
-            }
-        },
-        ["west_city_raid"] = {
-            u1 = {
-                CFrame.new(-2359, 40, -85)
-            },
-            u2 = {
-                CFrame.new(-2359, 19.75, -85.8),
-                CFrame.new(-2359, 19.75, -86.6),
-                CFrame.new(-2359, 19.75, -87.4),
-                CFrame.new(-2359, 19.75, -88.2)
-            },
-            u3 = {
-                CFrame.new(-2359.8, 19.75, -85.8),
-                CFrame.new(-2359.8, 19.75, -86.6),
-                CFrame.new(-2359.8, 19.75, -87.4),
-                CFrame.new(-2359.8, 19.75, -88.2)
-            },
-            u4 = {
-                CFrame.new(-2358.2, 19.75, -85.8),
-                CFrame.new(-2358.2, 19.75, -86.6),
-                CFrame.new(-2358.2, 19.75, -87.4),
-                CFrame.new(-2358.2, 19.75, -88.2)
-            },
-            u5 = {
-                CFrame.new(-2360.6, 19.75, -85.8),
-                CFrame.new(-2360.6, 19.75, -86.6),
-                CFrame.new(-2360.6, 19.75, -87.4),
-                CFrame.new(-2360.6, 19.75, -88.2)
-            },
-            u6 = {
-                CFrame.new(-2357.4, 19.75, -85.8),
-                CFrame.new(-2357.4, 19.75, -86.6),
-                CFrame.new(-2357.4, 19.75, -87.4),
-                CFrame.new(-2357.4, 19.75, -88.2)
+            ["aot_raid"] = {
+                u1 = UnitCFrames(CFrame.new(-2981, 42, -692), 3, "money"),
+                u2 = UnitCFrames(CFrame.new(-3014, 33.75, -682), 4, "z", 0),
+                u3 = UnitCFrames(CFrame.new(-3014, 33.75, -682), 4, "z", 1),
+                u4 = UnitCFrames(CFrame.new(-3014, 33.75, -682), 4, "z", 2),
+                u5 = UnitCFrames(CFrame.new(-3014, 33.75, -682), 4, "z", 3),
+                u6 = UnitCFrames(CFrame.new(-3014, 33.75, -682), 4, "z", 4)
             }
         }
-    }
-    return UnitPos[map][unit][pos]
-end
-function PlaceToLoc(unitId, loc)
-    if game:GetService("Workspace")["_wave_num"].Value < _G.Config.Inf.WaveToLose then
-        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unitId, loc)
+        return UnitPos[map][unit][pos]
     end
-end
+    function PlaceToLoc(UnitID, Location)
+        if game:GetService("Workspace")["_wave_num"].Value < _G.Config.Inf.WaveToLose then
+            game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(UnitID, Location)
+        end
+    end
 
-function DS.Whitelist()
-    return {
-        1340755305, -- Mazter
-        1022210737, -- Luipy
-        1934778943, -- Shonen
-        113452795, -- Mudinho
-        2427591310, -- Ninja
-        223770715, -- Jaca
-        2238617765, -- TheFox
-        3568641694, -- LhyMoDs
-        127184704, -- Senju
-        2771766988, -- Slow
-        2504255348, -- DouglasNFT
-        3332872267, -- Lirous
-        3067509017 -- WesleyPC
-    }
-end
-function DS.Codes()
-    return {
-        "CURSE2",
-        "CURSE",
-        "subtomaokuma",
-        "TOADBOIGAMING",
-        "SubToKelvingts",
-        "SubToBlamspot",
-        "FictioNTheFirst",
-        "KingLuffy",
-        "noclypso"
-    }
-end
+    function DS.Whitelist()
+        return {
+            1340755305, -- Mazter
+            1022210737, -- Luipy
+            1934778943, -- Shonen
+            113452795, -- Mudinho
+            2427591310, -- Ninja
+            223770715, -- Jaca
+            2238617765, -- TheFox
+            3568641694, -- LhyMoDs
+            127184704, -- Senju
+            2771766988, -- Slow
+            2504255348, -- DouglasNFT
+            3332872267, -- Lirous
+            3067509017 -- WesleyPC
+        }
+    end
+    function DS.Codes()
+        return {
+            "CURSE2",
+            "CURSE",
+            "subtomaokuma",
+            "TOADBOIGAMING",
+            "SubToKelvingts",
+            "SubToBlamspot",
+            "FictioNTheFirst",
+            "KingLuffy",
+            "noclypso"
+        }
+    end
 
-return DS;
+    return DS;
