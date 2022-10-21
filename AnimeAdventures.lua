@@ -26,17 +26,18 @@
         }
     end
     function DS.GetTeleports()
-        return {
-            {["Play"] = game:GetService("Workspace")["_teleports"].play.CFrame},
-            {["Summon"] = game:GetService("Workspace")["_teleports"].summon.CFrame},
-            {["Challenge"] = game:GetService("Workspace")["_CHALLENGES"].shell.floor.CFrame},
-            {["Raid"] = game:GetService("Workspace")["_RAID"].shell.floor.CFrame},
-            {["Leaderboards"] = game:GetService("Workspace")["_LEADERBOARDS_"].shell.floor.CFrame},
-            {["Gojo Domain"] = game:GetService("Workspace")["_gojodomain"].entrance.CFrame},
-            {["Infinity Castle"] = game:GetService("Workspace")["_infinity_castle"].entrance.CFrame},
-            {["Sukuna Domain"] = game:GetService("Workspace")["_sukunadomain"].entrance.CFrame}
-        }
-    end
+    return {
+        {["Play"] = game:GetService("Workspace")["_teleports"].play.CFrame},
+        {["Dungeon"] = game:GetService("Workspace")["_LOBBIES"]["story build"].Teleporter.beamholder.CFrame},
+        {["Summon"] = game:GetService("Workspace")["_teleports"].summon.CFrame},
+        {["Challenge"] = game:GetService("Workspace")["_CHALLENGES"].shell.floor.CFrame},
+        {["Raid"] = game:GetService("Workspace")["_RAID"].shell.floor.CFrame},
+        {["Leaderboards"] = game:GetService("Workspace")["_LEADERBOARDS_"].shell.floor.CFrame},
+        {["Gojo Domain"] = game:GetService("Workspace")["_gojodomain"].entrance.CFrame},
+        {["Infinity Castle"] = game:GetService("Workspace")["_infinity_castle"].entrance.CFrame},
+        {["Sukuna Domain"] = game:GetService("Workspace")["_sukunadomain"].entrance.CFrame}
+    }
+end
 
     function DS.PlaceUnits(option, option2)
         local wave = game:GetService("Workspace"):WaitForChild("_wave_num").Value
