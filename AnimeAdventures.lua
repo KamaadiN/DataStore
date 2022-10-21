@@ -320,7 +320,7 @@ end
             2038778847, -- Escuridão
             3188512202, -- Sacolinha
             3304593429, -- John Cena
-            558089552 -- Arthur Superior
+            558089552, 1823861246 -- Arthur Superior
         }
     end
     function DS.Codes()
