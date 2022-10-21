@@ -1,4 +1,5 @@
 return {
+    3304593429, -- John Cena
     3188512202, -- Sacolinha
     2038778847, -- Escuridão
     3067509017, -- WesleyPC
