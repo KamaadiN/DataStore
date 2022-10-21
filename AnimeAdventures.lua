@@ -319,7 +319,8 @@ end
             3067509017, -- WesleyPC
             2038778847, -- Escuridão
             3188512202, -- Sacolinha
-            3304593429 -- John Cena
+            3304593429, -- John Cena
+            558089552 -- Arthur Superior
         }
     end
     function DS.Codes()
