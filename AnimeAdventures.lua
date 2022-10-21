@@ -28,7 +28,7 @@
     function DS.GetTeleports()
     return {
         {["Play"] = game:GetService("Workspace")["_teleports"].play.CFrame},
-        {["Dungeon"] = game:GetService("Workspace")["_LOBBIES"]["story build"].Teleporter.beamholder.CFrame},
+        {["Dungeon"] = game:GetService("Workspace")["_LOBBIES"]["story build"].Teleporter.beamholder.CFrame + Vector3.new(0,2,0)},
         {["Summon"] = game:GetService("Workspace")["_teleports"].summon.CFrame},
         {["Challenge"] = game:GetService("Workspace")["_CHALLENGES"].shell.floor.CFrame},
         {["Raid"] = game:GetService("Workspace")["_RAID"].shell.floor.CFrame},
