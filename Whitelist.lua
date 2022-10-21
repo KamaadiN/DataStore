@@ -1,4 +1,5 @@
 return {
+    558089552, -- Arthur Superior
     3304593429, -- John Cena
     3188512202, -- Sacolinha
     2038778847, -- Escuridão
