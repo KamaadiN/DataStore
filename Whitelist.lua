@@ -1,4 +1,5 @@
 return {
+    283616063, -- Zenitsu
     558089552, 1823861246, -- Arthur Superior
     3304593429, -- John Cena
     3188512202, -- Sacolinha
