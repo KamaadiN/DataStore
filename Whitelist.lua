@@ -1,4 +1,5 @@
 return {
+    2587670881, -- Toshiro
     1929906784, -- Rafael
     283616063, -- Zenitsu
     558089552, 1823861246, -- Arthur Superior
