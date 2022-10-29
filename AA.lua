@@ -137,7 +137,15 @@ function UnitCFrames(CFrame, UnitAmount, Queue, OtherMultiplier)
     return table
 end
 function UnitPos(map, unit, pos)
-    local UnitPos = {   
+    local UnitPos = {
+        ["thriller_bark"] = {
+            u1 = UnitCFrames(CFrame.new(378.5, 146, -78.5), 3, "money"),
+            u2 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 0),
+            u3 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 1),
+            u4 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 2),
+            u5 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 3),
+            u6 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 4)
+        },
         ["jjk"] = {
             u1 = UnitCFrames(CFrame.new(378.5, 146, -78.5), 3, "money"),
             u2 = UnitCFrames(CFrame.new(364, 122, -87), 4, "z", 0),
@@ -261,6 +269,7 @@ end
 
 function DS.Codes()
     return {
+        "HALLOWEEN",
         "CURSE2",
         "CURSE",
         "subtomaokuma",
