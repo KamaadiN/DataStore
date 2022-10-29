@@ -25,7 +25,7 @@ end
 function DS.GetTeleports()
     return {
         {["Play"] = game:GetService("Workspace")["_teleports"].play.CFrame},
-        {["Dungeon"] = game:GetService("Workspace")["_LOBBIES"]["story build"].Teleporter.beamholder.CFrame + Vector3.new(0,2,0)},
+        {["Dungeons"] = game:GetService("Workspace")["_LOBBIES"]["story build"].Teleporter.beamholder.CFrame + Vector3.new(0,2,0)},
         {["Summon"] = game:GetService("Workspace")["_teleports"].summon.CFrame},
         {["Challenge"] = game:GetService("Workspace")["_CHALLENGES"].shell.floor.CFrame},
         {["Raid"] = game:GetService("Workspace")["_RAID"].shell.floor.CFrame},
@@ -100,13 +100,13 @@ function DS.PlaceUnits(option)
                 PlaceToLoc(uID[3], UnitPos(_G.Config[option].Map, "u4", i))
             end
         end
-        if wave > 10 then
+        if wave > 10 and wave < _G.Config[option].WaveToLose then
             local uID =  string.split(_G.Config.Inf.Units["u5"], " ")
             for i = 1, 4 do
                 PlaceToLoc(uID[3], UnitPos(_G.Config[option].Map, "u5", i))
             end
         end
-        if wave > 10 then
+        if wave > 10 and wave < _G.Config[option].WaveToLose then
             local uID =  string.split(_G.Config.Inf.Units["u6"], " ")  
             for i = 1, 5 do
                 PlaceToLoc(uID[3], UnitPos(_G.Config[option].Map, "u6", i))
@@ -262,9 +262,7 @@ function UnitPos(map, unit, pos)
     return UnitPos[map][unit][pos]
 end
 function PlaceToLoc(UnitID, Location)
-    if game:GetService("Workspace")["_wave_num"].Value < _G.Config.Inf.WaveToLose then
-        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(UnitID, Location)
-    end
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(UnitID, Location)
 end
 
 function DS.Codes()
