@@ -139,7 +139,7 @@ end
 function UnitPos(map, unit, pos)
     local UnitPos = {
         ["thriller_bark"] = {
-            u1 = UnitCFrames(CFrame.new(378.5, 146, -78.5), 3, "money"),
+            u1 = UnitCFrames(CFrame.new(-206, 125.16, -649.4), 3, "money"),
             u2 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 0),
             u3 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 1),
             u4 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 2),
