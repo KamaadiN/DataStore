@@ -75,7 +75,7 @@ function DS.PlaceUnits(option)
                 PlaceToLoc(uID[3], UnitPos(_G.Config[option].Map, "u6", i))
             end
         end
-    elseif option == "Inf" then
+    elseif option == "Inf" or option == "ThrillerBark" then
         if wave < 4 then
             local uID =  string.split(_G.Config.Inf.Units["u1"], " ")
             for i = 1, 3 do
