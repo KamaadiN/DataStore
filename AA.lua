@@ -140,11 +140,11 @@ function UnitPos(map, unit, pos)
     local UnitPos = {
         ["thriller_bark"] = {
             u1 = UnitCFrames(CFrame.new(-206, 125.16, -649.4), 3, "money"),
-            u2 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 0),
-            u3 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 1),
-            u4 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 2),
-            u5 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 3),
-            u6 = UnitCFrames(CFrame.new(-178, 109.4, -609), 4, "z", 4)
+            u2 = UnitCFrames(CFrame.new(-179, 109.4, -615), 4, "x", 0),
+            u3 = UnitCFrames(CFrame.new(-179, 109.4, -615), 4, "x", 1),
+            u4 = UnitCFrames(CFrame.new(-179, 109.4, -615), 4, "x", 2),
+            u5 = UnitCFrames(CFrame.new(-179, 109.4, -615), 4, "x", 3),
+            u6 = UnitCFrames(CFrame.new(-179, 109.4, -615), 4, "x", 4)
         },
         ["jjk"] = {
             u1 = UnitCFrames(CFrame.new(378.5, 146, -78.5), 3, "money"),
