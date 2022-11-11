@@ -1,4 +1,5 @@
 local whitelist = {
+    3010216570, -- ySanemi
     2831675278, -- Viktin
     3553830240, -- Mathzinzx
     638931134, -- Zekyu
